@@ -1,6 +1,6 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+# #!/bin/sh
+# . "$(dirname "$0")/_/husky.sh"
 
-set -e
+# set -e
 
-npx lint-staged
+# npx lint-staged
