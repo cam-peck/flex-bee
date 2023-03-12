@@ -3,7 +3,7 @@ import React, { useState } from "react"
 function checkAnswer(level: number, userAnswer: string): boolean {
   // split logic goes here //
   const answers = new Map<number, string>();
-  answers.set(1, 'justify-content: flex-end;');
+  answers.set(1, 'justify-content: flex-end');
   if (userAnswer === answers.get(level)) {
     console.log('match found')
     return true;
@@ -46,20 +46,17 @@ export default function Page() {
   const property: string | undefined = convertClassToReact(splitAnswer[0]);
   const value: string | undefined = removeSemiColon(splitAnswer[1]);
 
- let userStyle;
-  if (checkForSemicolon(value)) {
-    userStyle = {
+  const userStyle = {
       [property]: value
     };
-  }
 
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
         <div className="sky flex" style={userStyle}>
-          <img className="bee" src="/images/bee-y.webp" />
+          <img className="bee" src="/images/bee-g.webp" />
           <div className="hive-container flex jc-fe">
-            <img className="hive" src="/images/hive-y.webp"/>
+            <img className="hive" src="/images/hive-g.webp"/>
           </div>
         </div>
       </div>

@@ -33,12 +33,14 @@
   position: absolute;
   width: 100px;
   height: 100px;
+  margin: 10px;
 }
 
 .bee {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   z-index: 10;
+  margin: 25px;
 }
 
 .instructions {
@@ -107,8 +109,8 @@
 
 @media only screen and (min-width: 768px) {
   .bee {
-    width: 125px;
-    height: 125px;
+    width: 100px;
+    height: 100px;
   }
 
   .hive {
@@ -123,8 +125,8 @@
 
 @media only screen and (min-width: 1280px) {
   .bee {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
   }
 
   .hive {
