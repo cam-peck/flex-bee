@@ -11,16 +11,52 @@ function checkAnswer(level: number, userAnswer: string): boolean {
   else return false;
 }
 
+function convertClassToReact(classToCheck: string): string {
+  const reference = new Map();
+  reference.set('justify-content', 'justifyContent')
+  reference.set('align-items', 'alignItems')
+
+  const grabbedClass = reference.get(classToCheck)
+  if (classToCheck.includes('-')) {
+    if (grabbedClass) { return grabbedClass }
+    else return 'nope'
+  }
+  return classToCheck;
+}
+
+function checkForSemicolon(value: string): boolean {
+  if (!value) return false;
+  if (value.includes(';')) {
+    return true;
+  } else return false;
+}
+
+function removeSemiColon(value: string): string {
+  if (checkForSemicolon(value)) {
+    return value.split(';')[0];
+  } return value;
+}
+
 export default function Page() {
   const [userAnswer, setUserAnswer] = useState('');
   const [level, setLevel] = useState(1); // this is where we grab the level from local storage (or in useEffect)
 
   const isCorrect = checkAnswer(level, userAnswer)
+  const splitAnswer = userAnswer.split(':');
+  const property: string | undefined = convertClassToReact(splitAnswer[0]);
+  const value: string | undefined = removeSemiColon(splitAnswer[1]);
+
+  let userStyle;
+  if (checkForSemicolon(value)) {
+    userStyle = {
+      [property]: value
+    };
+  }
 
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
-        <div className="sky flex">
+        <div className="sky flex" style={userStyle}>
           <img className="bee" src="/images/bee.png" />
           <img className="hive" src="/images/beehive.png"/>
         </div>
