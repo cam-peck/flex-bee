@@ -65,13 +65,12 @@ export default function Page() {
       <div className="col-half flex column ac-c">
         <div className="row-half">
           <div className="instructions">
-            <h2 className="font-c1 font-white">FlexBees</h2>
+            <h1 className="font-c1 font-white title">FlexBees</h1>
             <p className="font-golos font-white">
               Your mission, should you choose to accept it is to make the bee do
               bee things. You must achieve this by using flexbox to make the bee
               get to his bee hive to continue doing bee stuff.
             </p>
-            <JustifyHelp />
           </div>
         </div>
         <div className="row-half">
