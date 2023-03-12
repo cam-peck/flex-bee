@@ -1,19 +1,22 @@
 import React, { useState } from "react"
 
-function checkAnswer(level: number, userAnswer: string): string {
+function checkAnswer(level: number, userAnswer: string): boolean {
   // split logic goes here //
-  const answers = {
-    1: 'test',
-    2: 'test2'
+  const answers = new Map<number, string>();
+  answers.set(1, 'justify-content: flex-end;');
+  if (userAnswer === answers.get(level)) {
+    console.log('match found')
+    return true;
   }
-  return 'checking answer'
+  else return false;
 }
 
 export default function Page() {
   const [userAnswer, setUserAnswer] = useState('');
-  const [level, setLevel] = useState(0); // this is where we grab the level from local storage (or in useEffect)
+  const [level, setLevel] = useState(1); // this is where we grab the level from local storage (or in useEffect)
 
-  console.log(checkAnswer())
+  const isCorrect = checkAnswer(level, userAnswer)
+
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
@@ -46,13 +49,13 @@ export default function Page() {
             <div className="text-box">
               <p className="line-text">.sky &#123;</p>
               <p className="line-text pl-20">display: flex;</p>
-              <textarea className="line-text input-area ml-20">
-                {/* Controlled input takes user typing */}
-                {/* Controlled input checks change and stores in state */}
-                {/* State also needs to store the current level (in app) */}
+              <textarea onChange={ event => setUserAnswer(event.target.value) } className="line-text input-area ml-20">
                 {/* Check answer functions */}
                 {/* Adding multiple lines (STRETCH FEATURE) split on semi-colon and on colon */}
               </textarea>
+              {
+                isCorrect === true ? 'WOW NICE!' : 'You SUCK AT CSS'
+              }
               <p className="line-text">&#125;</p>
               <button type="button" className="continue">Next</button>
             </div>
