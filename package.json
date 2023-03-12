@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --port 3000",
+    "dev": "webpack serve --port 3000",
     "build": "NODE_ENV=production webpack"
   },
   "author": "Brandon Moy and Cameron Peck",

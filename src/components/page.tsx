@@ -1,43 +1,7 @@
 import React, { useState } from "react";
 import JustifyHelp from "./justify-help";
 import AlignHelp from "./align-help";
-
-function checkAnswer(level: number, userAnswer: string): boolean {
-  // split logic goes here //
-  const answers = new Map<number, string>();
-  answers.set(1, 'justify-content: flex-end');
-  if (userAnswer === answers.get(level)) {
-    console.log('match found')
-    return true;
-  }
-  else return false;
-}
-
-function convertClassToReact(classToCheck: string): string {
-  const reference = new Map();
-  reference.set('justify-content', 'justifyContent')
-  reference.set('align-items', 'alignItems')
-
-  const grabbedClass = reference.get(classToCheck)
-  if (classToCheck.includes('-')) {
-    if (grabbedClass) { return grabbedClass }
-    else return 'nope'
-  }
-  return classToCheck;
-}
-
-function checkForSemicolon(value: string): boolean {
-  if (!value) return false;
-  if (value.includes(';')) {
-    return true;
-  } else return false;
-}
-
-function removeSemiColon(value: string): string {
-  if (checkForSemicolon(value)) {
-    return value.split(';')[0];
-  } return value;
-}
+import { checkAnswer, convertClassToReact, removeSemiColon } from "../lib";
 
 export default function Page() {
   const [userAnswer, setUserAnswer] = useState('');
