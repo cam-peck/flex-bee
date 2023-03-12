@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import JustifyHelp from "./justify-help";
+import AlignHelp from "./align-help";
 
 function checkAnswer(level: number, userAnswer: string): boolean {
   // split logic goes here //

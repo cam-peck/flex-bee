@@ -99,7 +99,7 @@
 
 .bold-bg {
   font-weight: 600;
-  background: rgba(255, 208, 127, 0.75);
+  background: rgba(255, 208, 127, 0.5);
 }
 
 @media only screen and (min-width: 768px) {
