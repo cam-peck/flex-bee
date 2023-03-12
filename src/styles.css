@@ -1,3 +1,15 @@
+.font-c1 {
+  font-family: "Concert One", sans-serif;
+}
+
+.font-golos {
+  font-family: Golos, sans-serif;
+}
+
+.font-white {
+  color: white;
+}
+
 .bg-gold {
   background-color: #ea9d3e;
   width: 100%;
@@ -22,10 +34,18 @@
   height: 35%;
 }
 
-.input-box {
+.instructions {
   width: 90%;
   height: 90%;
+  margin: auto;
+}
+
+.input-box {
+  margin: auto;
   background: #e0e0e0;
+  width: 90%;
+  height: 90%;
+  position: relative;
 }
 
 .number-bar {
@@ -39,6 +59,22 @@
 .text-box {
   height: 100%;
   width: 90%;
+}
+
+.input-area {
+  font-family:
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace;
+  font-size: 1rem;
+}
+
+.continue {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .line-num {
@@ -73,7 +109,7 @@
   }
 
   .input-box {
-    height: 50%;
+    height: 80%;
   }
 }
 
@@ -89,8 +125,12 @@
     right: 2.5%;
   }
 
+  .instructions {
+    height: 80%;
+    margin: 4rem auto 0;
+  }
+
   .input-box {
-    width: 90%;
-    height: 40%;
+    height: 80%;
   }
 }
