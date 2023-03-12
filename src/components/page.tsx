@@ -46,7 +46,7 @@ export default function Page() {
   const property: string | undefined = convertClassToReact(splitAnswer[0]);
   const value: string | undefined = removeSemiColon(splitAnswer[1]);
 
-  let userStyle;
+ let userStyle;
   if (checkForSemicolon(value)) {
     userStyle = {
       [property]: value
@@ -57,8 +57,10 @@ export default function Page() {
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
         <div className="sky flex" style={userStyle}>
-          <img className="bee" src="/images/bee.png" />
-          <img className="hive" src="/images/beehive.png"/>
+          <img className="bee" src="/images/bee-y.webp" />
+          <div className="hive-container flex jc-fe">
+            <img className="hive" src="/images/hive-y.webp"/>
+          </div>
         </div>
       </div>
       <div className="col-half flex column ac-c">
