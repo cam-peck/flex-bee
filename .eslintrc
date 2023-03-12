@@ -5,7 +5,8 @@
     "browser": true
   },
   "parserOptions": {
-    "sourceType": "script"
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   },
   "extends": [
     "eslint:recommended",

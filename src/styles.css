@@ -32,6 +32,7 @@
 .bee {
   width: 40%;
   height: 35%;
+  z-index: 10;
 }
 
 .instructions {
