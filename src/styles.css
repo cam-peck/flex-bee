@@ -6,6 +6,13 @@
   font-family: Golos, sans-serif;
 }
 
+.font-consolas {
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
 .font-white {
   color: white;
 }
@@ -16,29 +23,47 @@
   height: 100vh;
 }
 
+.small-font {
+  font-size: 0.5rem;
+}
+
 .sky {
   width: 90%;
   height: 80%;
   background-color: #9ccedd;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.hive-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .hive {
   position: absolute;
-  width: 40%;
-  right: 5%;
-  top: 5%;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
 }
 
 .bee {
-  width: 40%;
-  height: 35%;
+  width: 75px;
+  height: 75px;
   z-index: 10;
+  margin: 25px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .instructions {
   width: 90%;
   height: 90%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .input-box {
@@ -47,29 +72,27 @@
   width: 90%;
   height: 90%;
   position: relative;
+  border-radius: 0.25rem;
 }
 
 .number-bar {
   height: 100%;
-  width: 10%;
+  width: 5%;
   background: #999;
   text-align: right;
   padding-right: 8px;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .text-box {
   height: 100%;
-  width: 90%;
+  width: 95%;
 }
 
 .input-area {
-  font-family:
-    Menlo,
-    Monaco,
-    Consolas,
-    "Courier New",
-    monospace;
   font-size: 1rem;
+  width: 275px;
+  height: 20px;
 }
 
 .continue {
@@ -78,52 +101,49 @@
   right: 10px;
 }
 
-.line-num {
-  color: white;
-  font-family:
-    Menlo,
-    Monaco,
-    Consolas,
-    "Courier New",
-    monospace;
-  margin: 0;
+.line-num,
+.line-text {
+  margin: 10px 0 0;
 }
 
-.line-text {
-  font-family:
-    Menlo,
-    Monaco,
-    Consolas,
-    "Courier New",
-    monospace;
-  margin: 0;
+.bold-bg {
+  font-weight: 600;
+  background: rgba(255, 208, 127, 0.5);
 }
 
 @media only screen and (min-width: 768px) {
+  p {
+    line-height: 25px;
+  }
+
   .bee {
-    width: 20%;
+    width: 100px;
+    height: 100px;
   }
 
   .hive {
-    width: 20%;
-    top: 6%;
+    width: 125px;
+    height: 125px;
   }
 
   .input-box {
     height: 80%;
   }
+
+  .input-area {
+    width: 400px;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
   .bee {
-    width: 30%;
-    height: 30%;
+    width: 125px;
+    height: 125px;
   }
 
   .hive {
-    width: 15%;
-    top: 10%;
-    right: 2.5%;
+    width: 150px;
+    height: 150px;
   }
 
   .instructions {

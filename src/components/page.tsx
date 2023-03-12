@@ -1,9 +1,11 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import JustifyHelp from "./justify-help";
+import AlignHelp from "./align-help";
 
 function checkAnswer(level: number, userAnswer: string): boolean {
   // split logic goes here //
   const answers = new Map<number, string>();
-  answers.set(1, 'justify-content: flex-end;');
+  answers.set(1, 'justify-content: flex-end');
   if (userAnswer === answers.get(level)) {
     console.log('match found')
     return true;
@@ -46,25 +48,24 @@ export default function Page() {
   const property: string | undefined = convertClassToReact(splitAnswer[0]);
   const value: string | undefined = removeSemiColon(splitAnswer[1]);
 
-  let userStyle;
-  if (checkForSemicolon(value)) {
-    userStyle = {
+  const userStyle = {
       [property]: value
     };
-  }
 
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
         <div className="sky flex" style={userStyle}>
-          <img className="bee" src="/images/bee.png" />
-          <img className="hive" src="/images/beehive.png"/>
+          <img className="bee" src="/images/bee-g.webp" />
+          <div className="hive-container flex jc-fe">
+            <img className="hive" src="/images/hive-g.webp"/>
+          </div>
         </div>
       </div>
       <div className="col-half flex column ac-c">
         <div className="row-half">
           <div className="instructions">
-            <h2 className="font-c1 font-white">FlexBees</h2>
+            <h1 className="font-c1 font-white title">FlexBees</h1>
             <p className="font-golos font-white">
               Your mission, should you choose to accept it is to make the bee do
               bee things. You must achieve this by using flexbox to make the bee
@@ -75,19 +76,19 @@ export default function Page() {
         <div className="row-half">
           <div className="input-box flex">
             <div className="number-bar">
-              <p className="line-num">1</p>
-              <p className="line-num">2</p>
-              <p className="line-num">3</p>
-              <p className="line-num">4</p>
-              <p className="line-num">5</p>
-              <p className="line-num">6</p>
+              <p className="line-num font-consolas font-white">1</p>
+              <p className="line-num font-consolas font-white">2</p>
+              <p className="line-num font-consolas font-white">3</p>
+              <p className="line-num font-consolas font-white">4</p>
+              <p className="line-num font-consolas font-white">5</p>
+              <p className="line-num font-consolas font-white">6</p>
             </div>
             <div className="text-box">
-              <p className="line-text">.sky &#123;</p>
-              <p className="line-text pl-20">display: flex;</p>
+              <p className="line-text font-consolas">.sky &#123;</p>
+              <p className="line-text pl-20 font-consolas">display: flex;</p>
               <textarea onChange={ event => setUserAnswer(event.target.value) } className="line-text input-area ml-20"></textarea>
 
-              <p className="line-text">&#125;</p>
+              <p className="line-text font-consolas">&#125;</p>
               <button disabled={isCorrect ? false : true} onClick={() => setLevel(level + 1)} type="button" className="continue">Next</button>
             </div>
           </div>
