@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import JustifyHelp from "./justify-help";
 
 function checkAnswer(level: number, userAnswer: string): boolean {
   // split logic goes here //
@@ -69,24 +70,25 @@ export default function Page() {
               bee things. You must achieve this by using flexbox to make the bee
               get to his bee hive to continue doing bee stuff.
             </p>
+            <JustifyHelp />
           </div>
         </div>
         <div className="row-half">
           <div className="input-box flex">
             <div className="number-bar">
-              <p className="line-num">1</p>
-              <p className="line-num">2</p>
-              <p className="line-num">3</p>
-              <p className="line-num">4</p>
-              <p className="line-num">5</p>
-              <p className="line-num">6</p>
+              <p className="line-num font-consolas font-white">1</p>
+              <p className="line-num font-consolas font-white">2</p>
+              <p className="line-num font-consolas font-white">3</p>
+              <p className="line-num font-consolas font-white">4</p>
+              <p className="line-num font-consolas font-white">5</p>
+              <p className="line-num font-consolas font-white">6</p>
             </div>
             <div className="text-box">
-              <p className="line-text">.sky &#123;</p>
-              <p className="line-text pl-20">display: flex;</p>
+              <p className="line-text font-consolas">.sky &#123;</p>
+              <p className="line-text pl-20 font-consolas">display: flex;</p>
               <textarea onChange={ event => setUserAnswer(event.target.value) } className="line-text input-area ml-20"></textarea>
 
-              <p className="line-text">&#125;</p>
+              <p className="line-text font-consolas">&#125;</p>
               <button disabled={isCorrect ? false : true} onClick={() => setLevel(level + 1)} type="button" className="continue">Next</button>
             </div>
           </div>

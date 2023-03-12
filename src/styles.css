@@ -6,6 +6,13 @@
   font-family: Golos, sans-serif;
 }
 
+.font-consolas {
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
 .font-white {
   color: white;
 }
@@ -74,12 +81,6 @@
 }
 
 .input-area {
-  font-family:
-    Menlo,
-    Monaco,
-    Consolas,
-    "Courier New",
-    monospace;
   font-size: 1rem;
   width: 275px;
   height: 20px;
@@ -91,25 +92,14 @@
   right: 10px;
 }
 
-.line-num {
-  color: white;
-  font-family:
-    Menlo,
-    Monaco,
-    Consolas,
-    "Courier New",
-    monospace;
+.line-num,
+.line-text {
   margin: 10px 0 0;
 }
 
-.line-text {
-  font-family:
-    Menlo,
-    Monaco,
-    Consolas,
-    "Courier New",
-    monospace;
-  margin: 10px 0 0;
+.bold-bg {
+  font-weight: 600;
+  background: rgba(255, 208, 127, 0.75);
 }
 
 @media only screen and (min-width: 768px) {
