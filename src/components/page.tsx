@@ -49,15 +49,10 @@ export default function Page() {
             <div className="text-box">
               <p className="line-text">.sky &#123;</p>
               <p className="line-text pl-20">display: flex;</p>
-              <textarea onChange={ event => setUserAnswer(event.target.value) } className="line-text input-area ml-20">
-                {/* Check answer functions */}
-                {/* Adding multiple lines (STRETCH FEATURE) split on semi-colon and on colon */}
-              </textarea>
-              {
-                isCorrect === true ? 'WOW NICE!' : 'You SUCK AT CSS'
-              }
+              <textarea onChange={ event => setUserAnswer(event.target.value) } className="line-text input-area ml-20"></textarea>
+
               <p className="line-text">&#125;</p>
-              <button type="button" className="continue">Next</button>
+              <button disabled={isCorrect ? false : true} onClick={() => setLevel(level + 1)} type="button" className="continue">Next</button>
             </div>
           </div>
         </div>
