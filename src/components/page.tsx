@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react"
+
+function checkAnswer(level: number, userAnswer: string): string {
+  // split logic goes here //
+  const answers = {
+    1: 'test',
+    2: 'test2'
+  }
+  return 'checking answer'
+}
 
 export default function Page() {
+  const [userAnswer, setUserAnswer] = useState('');
+  const [level, setLevel] = useState(0); // this is where we grab the level from local storage (or in useEffect)
+
+  console.log(checkAnswer())
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
@@ -33,7 +46,13 @@ export default function Page() {
             <div className="text-box">
               <p className="line-text">.sky &#123;</p>
               <p className="line-text pl-20">display: flex;</p>
-              <textarea className="line-text input-area ml-20"></textarea>
+              <textarea className="line-text input-area ml-20">
+                {/* Controlled input takes user typing */}
+                {/* Controlled input checks change and stores in state */}
+                {/* State also needs to store the current level (in app) */}
+                {/* Check answer functions */}
+                {/* Adding multiple lines (STRETCH FEATURE) split on semi-colon and on colon */}
+              </textarea>
               <p className="line-text">&#125;</p>
               <button type="button" className="continue">Next</button>
             </div>
