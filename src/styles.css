@@ -1,3 +1,12 @@
+body {
+  background-color: #ea9d3e;
+}
+
+.spacer {
+  width: 100%;
+  height: 5vh;
+}
+
 .font-c1 {
   font-family: "Concert One", sans-serif;
 }
@@ -18,13 +27,8 @@
 }
 
 .bg-gold {
-  background-color: #ea9d3e;
   width: 100%;
   height: 100vh;
-}
-
-.small-font {
-  font-size: 0.5rem;
 }
 
 .sky {
@@ -53,6 +57,7 @@
   height: 75px;
   z-index: 10;
   margin: 25px;
+  animation: bee 5s linear infinite;
 }
 
 .title {
@@ -70,23 +75,23 @@
   margin: auto;
   background: #e0e0e0;
   width: 90%;
-  height: 90%;
+  height: 100%;
   position: relative;
   border-radius: 0.25rem;
 }
 
 .number-bar {
   height: 100%;
-  width: 5%;
+  width: 7.5%;
   background: #999;
   text-align: right;
-  padding-right: 8px;
+  padding: 0 8px 10px;
   border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .text-box {
   height: 100%;
-  width: 95%;
+  width: 92.5%;
 }
 
 .input-area {
@@ -96,9 +101,23 @@
 }
 
 .continue {
+  background-color: rgb(62, 135, 56);
+  color: white;
+  padding: 6px;
+  border-radius: 0.25rem;
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+.false {
+  opacity: 50%;
+}
+
+.true {
+  opacity: 1;
+  transition: opacity 1s;
+  animation: grow 1s ease-out;
 }
 
 .line-num,
@@ -109,6 +128,22 @@
 .bold-bg {
   font-weight: 600;
   background: rgba(255, 208, 127, 0.5);
+}
+
+.level-container {
+  width: 80px;
+  height: 75%;
+  background: rgba(255, 208, 127, 0.75);
+}
+
+.level-display {
+  height: 75%;
+}
+
+.level-button {
+  background: rgba(255, 208, 127, 0.5);
+  height: 75%;
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -127,7 +162,11 @@
   }
 
   .input-box {
-    height: 80%;
+    height: 100%;
+  }
+
+  .number-bar {
+    width: 5%;
   }
 
   .input-area {
@@ -136,6 +175,10 @@
 }
 
 @media only screen and (min-width: 1280px) {
+  .spacer {
+    height: 20vh;
+  }
+
   .bee {
     width: 125px;
     height: 125px;
@@ -152,6 +195,34 @@
   }
 
   .input-box {
-    height: 80%;
+    height: 100%;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bee {
+  0% {
+    transform: scale(1) rotate(5deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(-5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(5deg);
   }
 }
