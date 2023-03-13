@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import JustifyHelp from "./justify-help";
 import AlignHelp from "./align-help";
+import End from "./end";
 import { checkAnswer, convertClassToReact, removeSemiColon, checkFlex, answers } from "../lib";
 
 export default function Page() {
   const [userAnswer, setUserAnswer] = useState('');
   const [level, setLevel] = useState(1);
+
+  if (level === 15) {
+    return <End />
+  } else {
   const levelDescription: string = answers.get(level).levelDescription;
   const splitFormat: string[] = answers.get(level).levelAnswer.split(':');
   const formatProperty: string = convertClassToReact(splitFormat[0]);
@@ -18,7 +23,7 @@ export default function Page() {
   const property: string | undefined = convertClassToReact(splitAnswer[0]);
   const value: string | undefined = removeSemiColon(splitAnswer[1]);
   const checkedValue: string = checkFlex(value);
-
+  const direction: string = answers.get(level).direction;
   const num: number = level % 3 === 0 ? 3
   : level % 2 === 0 ? 2
   : 1
@@ -30,9 +35,9 @@ export default function Page() {
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
-        <div className="sky flex" style={userStyle}>
+        <div className={`sky flex ${direction}`} style={userStyle}>
           <img className="bee" src={`/images/bee${num}.webp`} />
-          <div className="hive-container flex" style={hiveStyle}>
+          <div className={`hive-container flex ${direction}`} style={hiveStyle}>
             <img className="hive" src={`/images/hive${num}.webp`}/>
           </div>
         </div>
@@ -43,11 +48,11 @@ export default function Page() {
             <div className="title-container flex jc-sb">
               <h1 className="font-c1 font-white title">FlexBees</h1>
               <div className="level-selector flex ac-c">
-                <button className="level-button" onClick={() => { setLevel(level - 1); setUserAnswer('') }} type="button">
+                <button className="level-button" onClick={() => { if (level === 1) { return } else {setLevel(level - 1)}; setUserAnswer('') }} type="button">
                   <i className="font-white fa-solid fa-chevron-left"></i>
                 </button>
                 <div className="level-container flex jc-c ac-c">
-                  <p className="font-white font-c1 level-display">Level: {level}</p>
+                  <p className="font-white font-c1 level-display">Level: {level} of 14</p>
                 </div>
                 <button className="level-button" onClick={() => { setLevel(level + 1); setUserAnswer('') }} type="button">
                   <i className="font-white fa-solid fa-chevron-right"></i>
@@ -78,6 +83,7 @@ export default function Page() {
             <div className="text-box">
               <p className="line-text font-consolas">.sky &#123;</p>
               <p className="line-text pl-20 font-consolas">display: flex;</p>
+              <p className="line-text pl-20 font-consolas">flex-direction: {direction}</p>
               <textarea onChange={ event => setUserAnswer(event.target.value) } className="line-text input-area ml-20" value={userAnswer}></textarea>
               <p className="line-text font-consolas">&#125;</p>
               <button disabled={isCorrect ? false : true} onClick={() => {setLevel(level + 1); setUserAnswer('')}} type="button" className={`continue ${isCorrect}`}>Next</button>
@@ -86,5 +92,6 @@ export default function Page() {
         </div>
       </div>
     </div>
-  )
+    )
+  }
 }

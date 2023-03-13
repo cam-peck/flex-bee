@@ -3,8 +3,16 @@
   flex-wrap: wrap;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .flex {
   display: flex;
+}
+
+.row {
+  flex-direction: row;
 }
 
 .column {
@@ -25,6 +33,14 @@
 
 .ac-c {
   align-items: center;
+}
+
+.full {
+  width: 100%;
+}
+
+.half {
+  flex-basis: 100%;
 }
 
 .col-half {
@@ -53,5 +69,9 @@
   .col-half {
     flex-basis: 50%;
     height: 100vh;
+  }
+
+  .half {
+    flex-basis: 50%;
   }
 }
