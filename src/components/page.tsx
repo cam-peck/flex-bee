@@ -12,7 +12,7 @@ export default function Page() {
   const hiveStyle = {
     [formatProperty]: splitFormat[1]
   }
-
+  const helpType: string | null = answers.get(level).helpType;
   const isCorrect: boolean = checkAnswer(level, userAnswer)
   const splitAnswer: string[] = userAnswer.split(':');
   const property: string | undefined = convertClassToReact(splitAnswer[0]);
@@ -44,6 +44,11 @@ export default function Page() {
             <p className="font-golos font-white">
               { levelDescription }
             </p>
+            <>
+              { helpType === 'justify' && <JustifyHelp /> }
+              { helpType === 'align' && <AlignHelp /> }
+              { !helpType && <div className="spacer"></div>}
+            </>
 
           </div>
         </div>
