@@ -40,7 +40,20 @@ export default function Page() {
       <div className="col-half flex column ac-c">
         <div className="row-half">
           <div className="instructions">
-            <h1 className="font-c1 font-white title">FlexBees</h1>
+            <div className="title-container flex jc-sb">
+              <h1 className="font-c1 font-white title">FlexBees</h1>
+              <div className="level-selector flex ac-c">
+                <button className="level-button" onClick={() => { setLevel(level - 1); setUserAnswer('') }} type="button">
+                  <i className="font-white fa-solid fa-chevron-left"></i>
+                </button>
+                <div className="level-container flex jc-c ac-c">
+                  <p className="font-white font-c1 level-display">Level: {level}</p>
+                </div>
+                <button className="level-button" onClick={() => { setLevel(level + 1); setUserAnswer('') }} type="button">
+                  <i className="font-white fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
             <p className="font-golos font-white">
               { levelDescription }
             </p>

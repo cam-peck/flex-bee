@@ -130,6 +130,22 @@ body {
   background: rgba(255, 208, 127, 0.5);
 }
 
+.level-container {
+  width: 80px;
+  height: 75%;
+  background: rgba(255, 208, 127, 0.75);
+}
+
+.level-display {
+  height: 75%;
+}
+
+.level-button {
+  background: rgba(255, 208, 127, 0.5);
+  height: 75%;
+  border: none;
+}
+
 @media only screen and (min-width: 768px) {
   p {
     line-height: 25px;
