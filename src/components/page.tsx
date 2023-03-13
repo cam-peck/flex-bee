@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import JustifyHelp from "./justify-help";
 import AlignHelp from "./align-help";
-import { checkAnswer, convertClassToReact, removeSemiColon } from "../lib";
+import { checkAnswer, convertClassToReact, removeSemiColon, checkFlex } from "../lib";
 
 export default function Page() {
   const [userAnswer, setUserAnswer] = useState('');
-  const [level, setLevel] = useState(1); // this is where we grab the level from local storage (or in useEffect)
+  const [level, setLevel] = useState(1);
 
   const isCorrect = checkAnswer(level, userAnswer)
   const splitAnswer = userAnswer.split(':');
   const property: string | undefined = convertClassToReact(splitAnswer[0]);
   const value: string | undefined = removeSemiColon(splitAnswer[1]);
+  const checkedValue: string = checkFlex(value);
+
 
   const userStyle = {
-      [property]: value
-    };
+    [property]: checkedValue
+  };
 
   return (
     <div className="container bg-gold">
