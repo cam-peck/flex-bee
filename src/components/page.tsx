@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import JustifyHelp from "./justify-help";
 import AlignHelp from "./align-help";
+import End from "./end";
 import { checkAnswer, convertClassToReact, removeSemiColon, checkFlex, answers } from "../lib";
 
 export default function Page() {
@@ -27,6 +28,9 @@ export default function Page() {
     [property]: checkedValue
   };
 
+  if (level === 15) {
+    return <End />
+  } else {
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
@@ -43,11 +47,11 @@ export default function Page() {
             <div className="title-container flex jc-sb">
               <h1 className="font-c1 font-white title">FlexBees</h1>
               <div className="level-selector flex ac-c">
-                <button className="level-button" onClick={() => { setLevel(level - 1); setUserAnswer('') }} type="button">
+                <button className="level-button" onClick={() => { if (level === 1) { return } else {setLevel(level - 1)}; setUserAnswer('') }} type="button">
                   <i className="font-white fa-solid fa-chevron-left"></i>
                 </button>
                 <div className="level-container flex jc-c ac-c">
-                  <p className="font-white font-c1 level-display">Level: {level}</p>
+                  <p className="font-white font-c1 level-display">Level: {level} of 14</p>
                 </div>
                 <button className="level-button" onClick={() => { setLevel(level + 1); setUserAnswer('') }} type="button">
                   <i className="font-white fa-solid fa-chevron-right"></i>
@@ -87,5 +91,6 @@ export default function Page() {
         </div>
       </div>
     </div>
-  )
+    )
+  }
 }

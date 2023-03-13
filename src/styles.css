@@ -131,7 +131,7 @@ body {
 }
 
 .level-container {
-  width: 80px;
+  width: 140px;
   height: 75%;
   background: rgba(255, 208, 127, 0.75);
 }
@@ -144,6 +144,15 @@ body {
   background: rgba(255, 208, 127, 0.5);
   height: 75%;
   border: none;
+}
+
+.link {
+  font-size: 1.25rem;
+  text-decoration: none;
+  background: rgb(242, 191, 115);
+  border-radius: 0.25rem;
+  padding: 10px 5px;
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {
