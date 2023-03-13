@@ -19,6 +19,9 @@ export default function Page() {
   const value: string | undefined = removeSemiColon(splitAnswer[1]);
   const checkedValue: string = checkFlex(value);
 
+  const num: number = level % 3 === 0 ? 3
+  : level % 2 === 0 ? 2
+  : 1
 
   const userStyle = {
     [property]: checkedValue
@@ -28,9 +31,9 @@ export default function Page() {
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
         <div className="sky flex" style={userStyle}>
-          <img className="bee" src="/images/bee-g.webp" />
+          <img className="bee" src={`/images/bee${num}.webp`} />
           <div className="hive-container flex" style={hiveStyle}>
-            <img className="hive" src="/images/hive-g.webp"/>
+            <img className="hive" src={`/images/hive${num}.webp`}/>
           </div>
         </div>
       </div>
@@ -41,6 +44,7 @@ export default function Page() {
             <p className="font-golos font-white">
               { levelDescription }
             </p>
+
           </div>
         </div>
         <div className="row-half">
@@ -57,7 +61,6 @@ export default function Page() {
               <p className="line-text font-consolas">.sky &#123;</p>
               <p className="line-text pl-20 font-consolas">display: flex;</p>
               <textarea onChange={ event => setUserAnswer(event.target.value) } className="line-text input-area ml-20" value={userAnswer}></textarea>
-
               <p className="line-text font-consolas">&#125;</p>
               <button disabled={isCorrect ? false : true} onClick={() => {setLevel(level + 1); setUserAnswer('')}} type="button" className={`continue ${isCorrect}`}>Next</button>
             </div>
