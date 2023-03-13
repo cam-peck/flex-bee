@@ -7,6 +7,10 @@ import { checkAnswer, convertClassToReact, removeSemiColon, checkFlex, answers }
 export default function Page() {
   const [userAnswer, setUserAnswer] = useState('');
   const [level, setLevel] = useState(1);
+
+  if (level === 15) {
+    return <End />
+  } else {
   const levelDescription: string = answers.get(level).levelDescription;
   const splitFormat: string[] = answers.get(level).levelAnswer.split(':');
   const formatProperty: string = convertClassToReact(splitFormat[0]);
@@ -28,9 +32,6 @@ export default function Page() {
     [property]: checkedValue
   };
 
-  if (level === 15) {
-    return <End />
-  } else {
   return (
     <div className="container bg-gold">
       <div className="col-half flex jc-c ac-c">
