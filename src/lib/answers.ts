@@ -3,5 +3,14 @@ answers.set(1, { levelDescription: "Welcome to FlexBees! A game to get the honey
 answers.set(2, { levelDescription: "Great job! We've got another friend who needs to get to their hive. Let's get them there!", levelAnswer: 'justify-content: center', helpType: 'justify', direction: 'row' });
 answers.set(3, { levelDescription: "Fantastic! Uh oh, it looks like our little friend's home is below us! In order to move here, we'll have to use align-items", levelAnswer: 'align-items: center', helpType: 'align', direction: 'row' });
 answers.set(4, { levelDescription: "Let's take our little friend further!", levelAnswer: 'align-items: flex-end', helpType: 'align', direction: 'row' });
-
+answers.set(5, { levelDescription: "Oh my, it looks like's we've gotten switched over into columns! What happens to justify-content and align-items? Well, it's almost like it switches! Let's get our friend home using justify-content.", levelAnswer: 'justify-content: center', helpType: 'justify', direction: 'column' });
+answers.set(6, { levelDescription: "Alright! Let's get our friend across this time using align-items!", levelAnswer: 'align-items: flex-end', helpType: 'align', direction: 'column' });
+answers.set(7, { levelDescription: "Great! Let's see if you can get our friend home without the help. These next few will be using justify-content. Make sure to keep an eye on whether we're using a column or a row!", levelAnswer: 'justify-content: flex-end', helpType: null, direction: 'column' });
+answers.set(8, { levelDescription: "Make sure to check whether we're using a column or a row!", levelAnswer: 'justify-content: flex-end', helpType: null, direction: 'row' });
+answers.set(9, { levelDescription: "Make sure to check whether we're using a column or a row!", levelAnswer: 'justify-content: center', helpType: null, direction: 'column' });
+answers.set(10, { levelDescription: "Last one, Make sure to check whether we're using a column or a row!", levelAnswer: 'justify-content: flex-end', helpType: null, direction: 'column' });
+answers.set(11, { levelDescription: "Alright, now let's practice with align-items! Make sure to check whether we're using a column or a row!", levelAnswer: 'align-items: flex-end', helpType: null, direction: 'column' });
+answers.set(12, { levelDescription: "Make sure to check whether we're using a column or a row!", levelAnswer: 'align-items: center', helpType: null, direction: 'column' });
+answers.set(13, { levelDescription: "Make sure to check whether we're using a column or a row!", levelAnswer: 'align-items: center', helpType: null, direction: 'row' });
+answers.set(14, { levelDescription: "Make sure to check whether we're using a column or a row!", levelAnswer: 'align-items: flex-end', helpType: null, direction: 'column' });
 export default answers;
