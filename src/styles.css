@@ -23,10 +23,6 @@
   height: 100vh;
 }
 
-.small-font {
-  font-size: 0.5rem;
-}
-
 .sky {
   width: 90%;
   height: 80%;
@@ -53,6 +49,7 @@
   height: 75px;
   z-index: 10;
   margin: 25px;
+  animation: bee 5s linear infinite;
 }
 
 .title {
@@ -96,9 +93,23 @@
 }
 
 .continue {
+  background-color: rgb(62, 135, 56);
+  color: white;
+  padding: 6px;
+  border-radius: 0.25rem;
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+.false {
+  opacity: 50%;
+}
+
+.true {
+  opacity: 1;
+  transition: opacity 1s;
+  animation: grow 1s ease-out;
 }
 
 .line-num,
@@ -127,7 +138,7 @@
   }
 
   .input-box {
-    height: 80%;
+    height: 100%;
   }
 
   .input-area {
@@ -153,5 +164,33 @@
 
   .input-box {
     height: 80%;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bee {
+  0% {
+    transform: scale(1) rotate(5deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(-5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(5deg);
   }
 }
